@@ -8,17 +8,17 @@
 
 ## Manual
 
-- [ ] Opening `/checkin` on a device with camera permission grants a live video preview by default (camera-on default, per `requirements.md`)
-- [ ] Holding a real ticket QR (from the tickets list, Phase 4) in frame fills the `registrationSheetId` field with the decoded value and does **not** auto-submit the form
-- [ ] Pressing "Check in" after a scan produces the same outcomes Phase 3 already covers (checked-in, already-registered-today, transferred banner, etc.) — proving the camera is purely a fill affordance
-- [ ] Holding the same QR steady in frame does not repeatedly refill/flicker the field (decoded value only re-fires `onScan` on change, per `requirements.md`)
-- [ ] "Switch to manual entry" hides the camera view and stops the camera (verify the camera indicator light/tab icon turns off) and shows the plain typed field pre-filled with whatever value was last set
-- [ ] "Switch to camera" from manual mode re-opens the camera view
-- [ ] Denying camera permission (or testing on a browser without camera access) shows an inline error/message and the manual field remains fully usable — check-in is not blocked
-- [ ] Verify on a browser with native `BarcodeDetector` (e.g. desktop Chrome or Android Chrome) that scanning works
-- [ ] Verify on a browser without `BarcodeDetector` (e.g. Safari/iOS, or by feature-detection override in devtools) that the `jsQR` fallback path decodes successfully
-- [ ] Navigating away from `/checkin` (or unmounting the component) stops the camera stream — no lingering camera indicator
-- [ ] Camera view and toggle are checked at mobile (390px), tablet (768px), and desktop (1920px) widths — no horizontal overflow, video preview stays legible and correctly sized at each (per `specs/mission.md` responsive requirement)
+- [x] Opening `/checkin` on a device with camera permission grants a live video preview by default (camera-on default, per `requirements.md`)
+- [x] Holding a real ticket QR (from the tickets list, Phase 4) in frame fills the `registrationSheetId` field with the decoded value and does **not** auto-submit the form
+- [x] Pressing "Check in" after a scan produces the same outcomes Phase 3 already covers (checked-in, already-registered-today, transferred banner, etc.) — proving the camera is purely a fill affordance
+- [x] Holding the same QR steady in frame does not repeatedly refill/flicker the field (decoded value only re-fires `onScan` on change, per `requirements.md`)
+- [x] "Switch to manual entry" hides the camera view and stops the camera (verify the camera indicator light/tab icon turns off) and shows the plain typed field pre-filled with whatever value was last set
+- [x] "Switch to camera" from manual mode re-opens the camera view
+- [x] Denying camera permission (or testing on a browser without camera access) shows an inline error/message and the manual field remains fully usable — check-in is not blocked
+- [x] Verify on a browser with native `BarcodeDetector` (e.g. desktop Chrome or Android Chrome) that scanning works
+- [x] Verify on a browser without `BarcodeDetector` (e.g. Safari/iOS, or by feature-detection override in devtools) that the `jsQR` fallback path decodes successfully
+- [x] Navigating away from `/checkin` (or unmounting the component) stops the camera stream — no lingering camera indicator
+- [x] Camera view and toggle are checked at mobile (390px), tablet (768px), and desktop (1920px) widths — no horizontal overflow, video preview stays legible and correctly sized at each (per `specs/mission.md` responsive requirement)
 
 ## Definition of done
 
