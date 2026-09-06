@@ -54,10 +54,13 @@ export function TransferTicketForm() {
                 name={field.name}
                 type={field.type}
                 required={field.required}
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+                className="w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm text-black dark:border-gray-700 dark:bg-gray-900 dark:text-white"
               />
               {fieldError && (
-                <p className="text-sm text-red-600" role="alert">
+                <p
+                  className="text-sm text-red-600 dark:text-red-400"
+                  role="alert"
+                >
                   {fieldError}
                 </p>
               )}
@@ -67,22 +70,26 @@ export function TransferTicketForm() {
         <button
           type="submit"
           disabled={pending}
-          className="mt-2 w-full rounded bg-black px-4 py-2 text-sm font-medium text-white disabled:opacity-50 sm:w-auto"
+          className="mt-2 w-full rounded bg-black px-4 py-2 text-sm font-medium text-white disabled:opacity-50 sm:w-auto dark:bg-white dark:text-black"
         >
           {pending ? "Transferring…" : "Transfer ticket"}
         </button>
       </form>
 
       {state.status === "error" && (
-        <p className="text-sm text-red-600" role="alert" aria-live="polite">
+        <p
+          className="text-sm text-red-600 dark:text-red-400"
+          role="alert"
+          aria-live="polite"
+        >
           {state.message}
         </p>
       )}
 
       {state.status === "success" && (
-        <div className="flex w-full flex-col items-start gap-3 rounded border border-gray-300 p-4">
+        <div className="flex w-full flex-col items-start gap-3 rounded border border-gray-300 p-4 dark:border-gray-700">
           <p className="text-sm font-medium">Ticket transferred</p>
-          <dl className="break-words text-sm text-gray-700">
+          <dl className="break-words text-sm text-gray-700 dark:text-gray-400">
             <div>
               <dt className="inline font-medium">
                 New registration sheet id:{" "}

@@ -14,7 +14,7 @@ export default async function TicketsPage() {
       <h1 className="text-lg font-semibold sm:text-xl">Tickets</h1>
 
       {tickets.length === 0 ? (
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-gray-700 dark:text-gray-400">
           No tickets have been generated yet.
         </p>
       ) : (
@@ -22,17 +22,17 @@ export default async function TicketsPage() {
           {tickets.map((ticket) => (
             <div
               key={ticket.id}
-              className="flex w-full flex-col items-start gap-3 rounded border border-gray-300 p-4"
+              className="flex w-full flex-col items-start gap-3 rounded border border-gray-300 p-4 dark:border-gray-700"
             >
               <div className="flex w-full items-start justify-between gap-2">
                 <p className="text-sm font-medium">{ticket.ticketType}</p>
                 {ticket.isTransferred && (
-                  <span className="rounded bg-black px-2 py-0.5 text-xs font-medium text-white">
+                  <span className="rounded bg-black px-2 py-0.5 text-xs font-medium text-white dark:bg-white dark:text-black">
                     Transferred
                   </span>
                 )}
               </div>
-              <dl className="break-words text-sm text-gray-700">
+              <dl className="break-words text-sm text-gray-700 dark:text-gray-400">
                 <div>
                   <dt className="inline font-medium">
                     {ticket.user.fullName ?? "Name not provided"}

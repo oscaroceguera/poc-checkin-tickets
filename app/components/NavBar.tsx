@@ -10,13 +10,13 @@ const links = [
 
 export function NavBar() {
   return (
-    <nav className="w-full border-b border-gray-300">
+    <nav className="w-full border-b border-gray-300 dark:border-gray-700">
       <ul className="mx-auto flex w-full max-w-3xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 text-sm sm:px-8">
         {links.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
-              className="rounded px-2 py-1 font-medium text-black hover:bg-black/[.06]"
+              className="rounded px-2 py-1 font-medium text-black hover:bg-black/[.06] dark:text-gray-100 dark:hover:bg-white/[.08]"
             >
               {link.label}
             </Link>

@@ -144,7 +144,7 @@ export function QrScanner({ onScan, active }: QrScannerProps) {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="aspect-square w-full max-w-sm overflow-hidden rounded border border-gray-300 bg-black">
+      <div className="aspect-square w-full max-w-sm overflow-hidden rounded border border-gray-300 bg-black dark:border-gray-700">
         <video
           ref={videoRef}
           playsInline
@@ -154,7 +154,7 @@ export function QrScanner({ onScan, active }: QrScannerProps) {
       </div>
       <canvas ref={canvasRef} className="hidden" />
       {error && (
-        <p className="text-sm text-red-600" role="alert">
+        <p className="text-sm text-red-600 dark:text-red-400" role="alert">
           {error}
         </p>
       )}

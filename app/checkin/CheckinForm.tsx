@@ -80,11 +80,14 @@ export function CheckinForm() {
             required
             value={registrationSheetId}
             onChange={(event) => setRegistrationSheetId(event.target.value)}
-            className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            className="w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm text-black dark:border-gray-700 dark:bg-gray-900 dark:text-white"
           />
           {state.status === "error" &&
             state.fieldErrors?.registrationSheetId && (
-              <p className="text-sm text-red-600" role="alert">
+              <p
+                className="text-sm text-red-600 dark:text-red-400"
+                role="alert"
+              >
                 {state.fieldErrors.registrationSheetId}
               </p>
             )}
@@ -93,36 +96,43 @@ export function CheckinForm() {
         <button
           type="submit"
           disabled={pending}
-          className="mt-2 w-full rounded bg-black px-4 py-2 text-sm font-medium text-white disabled:opacity-50 sm:w-auto"
+          className="mt-2 w-full rounded bg-black px-4 py-2 text-sm font-medium text-white disabled:opacity-50 sm:w-auto dark:bg-white dark:text-black"
         >
           {pending ? "Checking in…" : "Check in"}
         </button>
       </form>
 
       {state.status === "error" && (
-        <p className="text-sm text-red-600" role="alert" aria-live="polite">
+        <p
+          className="text-sm text-red-600 dark:text-red-400"
+          role="alert"
+          aria-live="polite"
+        >
           {state.message}
         </p>
       )}
 
       {state.status === "success" && (
-        <div className="flex w-full flex-col items-start gap-3 rounded border border-gray-300 p-4">
+        <div className="flex w-full flex-col items-start gap-3 rounded border border-gray-300 p-4 dark:border-gray-700">
           <output
             className={
               state.outcome === "checked-in"
-                ? "text-sm font-medium text-green-700"
-                : "text-sm font-medium text-amber-700"
+                ? "text-sm font-medium text-green-700 dark:text-green-400"
+                : "text-sm font-medium text-amber-700 dark:text-amber-400"
             }
             aria-live="polite"
           >
             {outcomeCopy[state.outcome]}
           </output>
           {state.transferred && (
-            <p className="text-sm font-medium text-amber-700" role="alert">
+            <p
+              className="text-sm font-medium text-amber-700 dark:text-amber-400"
+              role="alert"
+            >
               This ticket was transferred to another user.
             </p>
           )}
-          <p className="break-words text-sm text-gray-700">
+          <p className="break-words text-sm text-gray-700 dark:text-gray-400">
             Registration sheet id: {state.registrationSheet.id}
           </p>
         </div>
