@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run --passWithNoTests",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
