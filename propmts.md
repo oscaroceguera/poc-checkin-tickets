@@ -36,3 +36,13 @@ Important: You must use your AskUserQuestion tool, gropued on these 3, before wi
 ```text
 implement ONLY the taks 1 of @specs/2026-09-05-foundation-setup/plan.md, and mask as resolved in @specs/roadmap.md , write tests then the code, tell what you do, stop not init the task 2
 ```
+
+## VALIDATION
+
+```text
+analyze the @specs/2026-09-05-foundation-setup/validation.md and validate if all tha task are done and update it
+```
+
+---
+
+> I want a CHANGELOG.md int the root of the project use the changelog skill

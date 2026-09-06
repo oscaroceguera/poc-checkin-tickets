@@ -1,11 +1,23 @@
 {
   "version": 1,
   "skills": {
+    "changelog-generator": {
+      "source": "composiohq/awesome-claude-skills",
+      "sourceType": "github",
+      "skillPath": "changelog-generator/SKILL.md",
+      "computedHash": "0facdb5c491a654e3b0f6d300fb8fa14472d811cb715c632dc2862919b277dae"
+    },
     "create-agentsmd": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
       "skillPath": "skills/create-agentsmd/SKILL.md",
       "computedHash": "bfbdbb76b17cca970d1d624e36ce72b6847860d740581c8865da796c1fef8552"
+    },
+    "feature-spec": {
+      "source": "oscaroceguera/skills-bucket",
+      "sourceType": "github",
+      "skillPath": "skills/feature-spec/SKILL.md",
+      "computedHash": "81427a3bdb04322da3cedb3155b2b1aa8716726c2e27449d5c68c509b14cc20c"
     },
     "performance-optimization": {
       "source": "addyosmani/agent-skills",
