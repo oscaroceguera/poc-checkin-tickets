@@ -10,9 +10,9 @@ create a agent desctiprion into @AGENTS.md to describe a generate a ticket admin
 let's create a "constitution" in a spects directory:
 - mission.md
 - tech-stack.md
-- roadmap.md for high-level implementation order, in very samml pahses to work.
+- roadmap.md for high-level implementation order, in very small phases to work.
 
-Important: You must use your AskUserQuestion tool, gropued on these 3, before wirtting to disk.
+Important: You must use your AskUserQuestion tool, grouped on these 3, before writing to disk.
 ```
 
 ## CREATE SPECS (FOUNDATION)
