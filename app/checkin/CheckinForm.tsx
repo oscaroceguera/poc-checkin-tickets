@@ -1,7 +1,8 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { type CheckinTicketActionState, checkinTicketAction } from "./actions";
+import { QrScanner } from "./QrScanner";
 
 const initialState: CheckinTicketActionState = { status: "idle" };
 
@@ -15,6 +16,8 @@ export function CheckinForm() {
     checkinTicketAction,
     initialState,
   );
+  const [mode, setMode] = useState<"camera" | "manual">("camera");
+  const [registrationSheetId, setRegistrationSheetId] = useState("");
 
   return (
     <div className="flex flex-col gap-6">
@@ -39,16 +42,44 @@ export function CheckinForm() {
           </div>
         </fieldset>
 
-        <div className="flex flex-col gap-1">
-          <label htmlFor="registrationSheetId" className="text-sm font-medium">
-            Ticket QR / registration sheet id
-            <span aria-hidden="true"> *</span>
-          </label>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center justify-between">
+            <label
+              htmlFor="registrationSheetId"
+              className="text-sm font-medium"
+            >
+              Ticket QR / registration sheet id
+              <span aria-hidden="true"> *</span>
+            </label>
+            <button
+              type="button"
+              onClick={() =>
+                setMode((current) =>
+                  current === "camera" ? "manual" : "camera",
+                )
+              }
+              className="text-sm font-medium underline"
+            >
+              {mode === "camera"
+                ? "Switch to manual entry"
+                : "Switch to camera"}
+            </button>
+          </div>
+
+          {mode === "camera" && (
+            <QrScanner
+              active={mode === "camera"}
+              onScan={setRegistrationSheetId}
+            />
+          )}
+
           <input
             id="registrationSheetId"
             name="registrationSheetId"
             type="text"
             required
+            value={registrationSheetId}
+            onChange={(event) => setRegistrationSheetId(event.target.value)}
             className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
           />
           {state.status === "error" &&

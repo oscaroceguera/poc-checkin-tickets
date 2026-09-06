@@ -42,9 +42,9 @@ High-level implementation order, in small phases. Sequenced **Foundation → Gen
 
 ## Phase 5 — Camera QR Scanning (Check-in)
 
-- [ ] `app/checkin/QrScanner.tsx`: camera capture + `BarcodeDetector` decode with `jsQR` fallback
-- [ ] Wire `QrScanner` into `CheckinForm`, filling (not auto-submitting) the existing `registrationSheetId` field
-- [ ] Typed/pasted field remains as fallback alongside the camera view
+- [x] `app/checkin/QrScanner.tsx`: camera capture + `BarcodeDetector` decode with `jsQR` fallback
+- [x] Wire `QrScanner` into `CheckinForm`, filling (not auto-submitting) the existing `registrationSheetId` field
+- [x] Typed/pasted field remains as fallback alongside the camera view
 
 ## Phase 6 — Polish (optional)
 
