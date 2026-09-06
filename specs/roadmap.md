@@ -35,10 +35,10 @@ High-level implementation order, in small phases. Sequenced **Foundation → Gen
 
 ## Phase 4 — Tickets List & Navigation
 
-- [ ] `lib/tickets/list.ts`: `listTickets()` pure read — all tickets with user, transfer status, and regenerated QR
-- [ ] `app/admin/tickets/page.tsx`: list every ticket with its QR
-- [ ] `app/components/NavBar.tsx`: shared nav linking Home, Generate, Transfer, Tickets, Check-in — rendered from `app/layout.tsx`
-- [ ] Unit tests for `list.ts`
+- [x] `lib/tickets/list.ts`: `listTickets()` pure read — all tickets with user, transfer status, and regenerated QR
+- [x] `app/admin/tickets/page.tsx`: list every ticket with its QR
+- [x] `app/components/NavBar.tsx`: shared nav linking Home, Generate, Transfer, Tickets, Check-in — rendered from `app/layout.tsx`
+- [x] Unit tests for `list.ts`
 
 ## Phase 5 — Camera QR Scanning (Check-in)
 
