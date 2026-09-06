@@ -21,10 +21,10 @@ High-level implementation order, in small phases. Sequenced **Foundation → Gen
 
 ## Phase 2 — Ticket Transfer
 
-- [ ] `lib/tickets/transfer.ts`: create a `TicketTransfer` row linking original → transferred ticket
-- [ ] Thin route/Server Action adapter
-- [ ] Minimal UI section for staff to perform a transfer
-- [ ] Unit tests for `transfer.ts`
+- [x] `lib/tickets/transfer.ts`: create a `TicketTransfer` row linking original → transferred ticket
+- [x] Thin route/Server Action adapter
+- [x] Minimal UI section for staff to perform a transfer
+- [x] Unit tests for `transfer.ts`
 
 ## Phase 3 — Check-in (QR Scan)
 

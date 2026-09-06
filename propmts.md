@@ -66,3 +66,13 @@ Go to the roamp map and continue with the next phase
 ```text
 For ticket generation the fields checkoutSessionId (random uuid autogenerate), ticketTypeSale (NORMAL by default we dont need type in a field), ticketType (EARLY-BIRD by default we dont need to type in a field), paymenIntent (random uuid autogenerate), paymentId (random uuid autogenerate),please udate the specs
 ```
+
+## CONTINUE WITH NEW FEATURE OF THE NEXT PHASE 3
+
+**create a new spect**
+
+```text
+Go to the roadmap and continue with the next phase
+```
+
+**Implementation**
