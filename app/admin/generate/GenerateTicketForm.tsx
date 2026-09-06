@@ -81,6 +81,7 @@ export function GenerateTicketForm() {
               <dd className="inline">{state.ticket.registrationSheet.id}</dd>
             </div>
           </dl>
+          {/* biome-ignore lint/performance/noImgElement: QR code is a data: URI, next/image can't optimize it */}
           <img
             src={state.ticket.qrDataUrl}
             alt={`QR ticket for registration sheet ${state.ticket.registrationSheet.id}`}

@@ -48,6 +48,6 @@ High-level implementation order, in small phases. Sequenced **Foundation → Gen
 
 ## Phase 6 — Polish (optional)
 
-- [ ] UI error/alert states for each check-in outcome
-- [ ] `pnpm lint` clean pass
-- [ ] Update `README.md` with setup/run instructions
+- [x] UI error/alert states for each check-in outcome
+- [x] `pnpm lint` clean pass
+- [x] Update `README.md` with setup/run instructions

@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# poc-checkin-tickets
 
-## Getting Started
+Ticket admin and check-in system for a two-day event (2026-10-29 and 2026-10-30): ticket generation, ticket transfer, and QR check-in with anti-duplication alerts.
 
-First, run the development server:
+This is an internal proof-of-concept — see `specs/mission.md` for scope and non-goals, and `AGENTS.md` for the full data model and business rules.
+
+## Prerequisites
+
+- Node.js and [pnpm](https://pnpm.io)
+- A PostgreSQL database (a free hosted instance works: `npx create-db`)
+
+## Setup
+
+1. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+2. Set `DATABASE_URL` in a `.env` file at the project root, pointing at your PostgreSQL database.
+
+3. Apply migrations:
+
+   ```bash
+   pnpm prisma migrate dev
+   ```
+
+4. Start the dev server:
+
+   ```bash
+   pnpm dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000).
+
+## Testing
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm test          # or: pnpm vitest run
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Unit tests cover the pure business logic in `lib/tickets/*` (generate, transfer, check-in, list).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Lint & format
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm lint          # Biome check
+pnpm format        # Biome auto-format
+```
 
-## Learn More
+## Build
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm build         # runs `prisma generate` then `next build`
+pnpm start
+```

@@ -13,7 +13,12 @@ export type CheckinTicketActionState =
       transferred: boolean;
       registrationSheet: CheckedInRegistrationSheet;
     }
-  | { status: "error"; message: string; fieldErrors?: Record<string, string> };
+  | {
+      status: "error";
+      code: "ticket-not-found" | "user-not-found" | "generic";
+      message: string;
+      fieldErrors?: Record<string, string>;
+    };
 
 export async function checkinTicketAction(
   _prevState: CheckinTicketActionState,
@@ -38,6 +43,7 @@ export async function checkinTicketAction(
   if (result.error === "invalid-input") {
     return {
       status: "error",
+      code: "generic",
       message: "Please fix the highlighted fields.",
       fieldErrors: result.fieldErrors,
     };
@@ -46,6 +52,7 @@ export async function checkinTicketAction(
   if (result.error === "ticket-not-found") {
     return {
       status: "error",
+      code: "ticket-not-found",
       message: "This ticket was not recognized.",
     };
   }
@@ -53,12 +60,14 @@ export async function checkinTicketAction(
   if (result.error === "user-not-found") {
     return {
       status: "error",
+      code: "user-not-found",
       message: "No user could be found for this ticket.",
     };
   }
 
   return {
     status: "error",
+    code: "generic",
     message: "Something went wrong. Please try again.",
   };
 }

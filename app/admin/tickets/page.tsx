@@ -42,6 +42,7 @@ export default async function TicketsPage() {
                   <dd className="inline">{ticket.user.email}</dd>
                 </div>
               </dl>
+              {/* biome-ignore lint/performance/noImgElement: QR code is a data: URI, next/image can't optimize it */}
               <img
                 src={ticket.qrDataUrl}
                 alt={`QR ticket for registration sheet ${ticket.registrationSheetId}`}
