@@ -28,12 +28,25 @@ High-level implementation order, in small phases. Sequenced **Foundation → Gen
 
 ## Phase 3 — Check-in (QR Scan)
 
-- [ ] `lib/tickets/checkin.ts` covering all five distinct outcomes: valid first scan, already-registered-today, transferred ticket, ticket not recognized, user not found
-- [ ] Thin route/Server Action adapter mapping each outcome to a distinct response
-- [ ] Minimal scan/check-in UI page
-- [ ] Unit tests for every outcome (required per `AGENTS.md` → Testing Instructions)
+- [x] `lib/tickets/checkin.ts` covering all five distinct outcomes: valid first scan, already-registered-today, transferred ticket, ticket not recognized, user not found
+- [x] Thin route/Server Action adapter mapping each outcome to a distinct response
+- [x] Minimal scan/check-in UI page
+- [x] Unit tests for every outcome (required per `AGENTS.md` → Testing Instructions)
 
-## Phase 4 — Polish (optional)
+## Phase 4 — Tickets List & Navigation
+
+- [ ] `lib/tickets/list.ts`: `listTickets()` pure read — all tickets with user, transfer status, and regenerated QR
+- [ ] `app/admin/tickets/page.tsx`: list every ticket with its QR
+- [ ] `app/components/NavBar.tsx`: shared nav linking Home, Generate, Transfer, Tickets, Check-in — rendered from `app/layout.tsx`
+- [ ] Unit tests for `list.ts`
+
+## Phase 5 — Camera QR Scanning (Check-in)
+
+- [ ] `app/checkin/QrScanner.tsx`: camera capture + `BarcodeDetector` decode with `jsQR` fallback
+- [ ] Wire `QrScanner` into `CheckinForm`, filling (not auto-submitting) the existing `registrationSheetId` field
+- [ ] Typed/pasted field remains as fallback alongside the camera view
+
+## Phase 6 — Polish (optional)
 
 - [ ] UI error/alert states for each check-in outcome
 - [ ] `pnpm lint` clean pass

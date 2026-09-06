@@ -69,10 +69,22 @@ For ticket generation the fields checkoutSessionId (random uuid autogenerate), t
 
 ## CONTINUE WITH NEW FEATURE OF THE NEXT PHASE 3
 
-**create a new spect**
+**create a new spec**
 
 ```text
 Go to the roadmap and continue with the next phase
 ```
 
-**Implementation**
+## CONTINUE WITH NEW FEATURE OF THE NEXT PHASE 3
+
+**create a new spec**
+
+```text
+Go to the roadmap and continue with the next phase
+```
+
+## UPDATE
+
+```text
+the checkin would be avalaible to scan a QR with the camera, I want a list of all tickets with his QR, add nav bar menu for routers, add to specs
+```
