@@ -12,10 +12,12 @@ High-level implementation order, in small phases. Sequenced **Foundation → Gen
 
 ## Phase 1 — Ticket Generation
 
-- [ ] `lib/tickets/generate.ts`: Order → Ticket → User → RegistrationSheet → QR payload, pure logic
-- [ ] Thin route/Server Action adapter calling into it
-- [ ] Minimal admin UI/form to trigger generation and display the QR
-- [ ] Unit tests for `generate.ts`
+- [x] `lib/tickets/generate.ts`: Order → Ticket → User → RegistrationSheet → QR payload, pure logic
+- [x] Thin route/Server Action adapter calling into it
+- [x] Minimal admin UI/form to trigger generation and display the QR
+- [x] Unit tests for `generate.ts`
+- [x] Migrate `generate.ts` input validation to a Zod schema (per `specs/tech-stack.md`)
+- [x] Make admin generate UI responsive for desktop, tablet, and mobile (per `specs/mission.md`)
 
 ## Phase 2 — Ticket Transfer
 

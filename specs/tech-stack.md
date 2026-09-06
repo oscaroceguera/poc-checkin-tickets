@@ -10,6 +10,7 @@
 | Styling | Tailwind CSS v4 | Utility-first styling, minimal custom CSS |
 | Lint/format | Biome | Faster, single tool instead of ESLint + Prettier |
 | Package manager | pnpm | Project standard (see `pnpm-workspace.yaml`) |
+| Form validation | Zod | Schema-based validation for form/input data, shared between client and server |
 
 ## Not yet installed
 

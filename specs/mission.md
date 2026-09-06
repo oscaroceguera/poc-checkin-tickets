@@ -10,6 +10,8 @@ The tool covers exactly three capabilities, detailed in `AGENTS.md`:
 2. **Ticket transfer** — reassign a ticket from one attendee to another.
 3. **Check-in** — scan a ticket's QR at the door and register attendance per day, surfacing anti-fraud/anti-duplication alerts.
 
+The UI must be responsive across desktop, tablet, and mobile — door staff scanning tickets will commonly use phones or tablets, while organizers managing tickets will commonly use desktop.
+
 ## Non-goals
 
 - Not a general-purpose or multi-event ticketing platform — the event dates and structure are fixed for this single event.
